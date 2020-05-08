@@ -38,6 +38,8 @@ namespace GuitarShop.Controllers
                     .OrderBy(p => p.ProductID).ToList();
             }
 
+
+            // create the view model
             var model = new ProductListViewModel
             {
                 Categories = categories,
@@ -45,8 +47,8 @@ namespace GuitarShop.Controllers
                 SelectedCategory = id
             };
 
-            // bind products to view
-            return View();
+            // pass the view model to the view
+            return View(model);
         }
 
         public IActionResult Details(int id)

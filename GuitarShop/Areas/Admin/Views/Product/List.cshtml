@@ -10,8 +10,8 @@
             <a asp-action="List" asp-route-id="All"
                class="list-group-item
                 @if (Model.SelectedCategory == "All") {
-                    <text>active</text>
-                } ">All</a>
+                    <text>active</text> 
+            } ">All</a>
             @foreach (Category c in Model.Categories)
             {
                 <a asp-action="List" asp-route-id="@c.Name"
@@ -50,11 +50,10 @@
                 }
             </tbody>
         </table>
-        @{
-            string userMessage = TempData? ["UserMessage"] ?.ToString() ?? "";
+        @{ 
+            string userMessage = TempData?["UserMessage"]?.ToString() ?? ""; 
         }
-        @if  (userMessage != "")
-        {
+        @if (userMessage != "") {
             <div class="text-success">@userMessage</div>
         }
         <a asp-action="Add" class="btn btn-primary">Add New Product</a>

@@ -8,19 +8,16 @@
     <div class="col-sm-2">
             <a asp-controller="Product" asp-action="List" asp-route-id="All" 
                 class="list-group-item 
-               @Model.CheckActiveCategory("All")">
+                @Model.CheckActiveCategory("All")">
                 All
             </a>
-
             @foreach (Category c in Model.Categories)
             {
-
-                    <a asp-controller="Product" asp-action="List" asp-route-id="@c.Name" 
-                       class="list-group-item
-                             @Model.CheckActiveCategory(c.Name)">
-                        @c.Name
-                    </a>
-
+                <a asp-controller="Product" asp-action="List" asp-route-id="@c.Name" 
+                    class="list-group-item
+                            @Model.CheckActiveCategory(c.Name)">
+                    @c.Name
+                </a>
             }
     </div>
 
